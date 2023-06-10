@@ -27,6 +27,7 @@ type TunConfig struct {
 	EndpointIndependentNat bool                   `json:"endpoint_independent_nat,omitempty"`
 	UDPTimeout             int64                  `json:"udp_timeout,omitempty"`
 	Stack                  string                 `json:"stack,omitempty"`
+	FileDescriptor         int                    `json:"file_descriptor,omitempty"`
 
 	AutoDetectInterface bool `json:"auto_detect_interface,omitempty"`
 	OverrideAndroidVPN  bool `json:"override_android_vpn,omitempty"`
@@ -54,6 +55,7 @@ func (f *TunConfig) Build() (*tun.Config, error) {
 	config.EndpointIndependentNat = f.EndpointIndependentNat
 	config.UdpTimeout = f.UDPTimeout
 	config.Stack = f.Stack
+	config.FileDescriptor = int32(f.FileDescriptor)
 	// for xray
 	config.AutoDetectInterface = f.AutoDetectInterface
 	config.OverrideAndroidVpn = f.OverrideAndroidVPN

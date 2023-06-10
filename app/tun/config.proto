@@ -25,6 +25,7 @@ message Config {
   repeated int32 include_android_user = 16;
   repeated string include_package = 17;
   repeated string exclude_package = 18;
+  int32 file_descriptor = 19;
 
   // for xray
   bool auto_detect_interface = 100;

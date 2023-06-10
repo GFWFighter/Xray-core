@@ -144,6 +144,7 @@ func New(ctx context.Context, config *Config) (*Tun, error) {
 		ExcludePackage:   config.ExcludePackage,
 		InterfaceMonitor: defaultInterfaceMonitor,
 		TableIndex:       2022,
+		FileDescriptor:   int(config.FileDescriptor),
 	}
 	return tunInterface, nil
 }
