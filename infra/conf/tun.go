@@ -29,8 +29,9 @@ type TunConfig struct {
 	Stack                  string                 `json:"stack,omitempty"`
 	FileDescriptor         int                    `json:"file_descriptor,omitempty"`
 
-	AutoDetectInterface bool `json:"auto_detect_interface,omitempty"`
-	OverrideAndroidVPN  bool `json:"override_android_vpn,omitempty"`
+	AutoDetectInterface   bool `json:"auto_detect_interface,omitempty"`
+	OverrideAndroidVPN    bool `json:"override_android_vpn,omitempty"`
+	UnderNetworkExtension bool `json:"under_network_extension,omitempty"`
 }
 
 func (f *TunConfig) Build() (*tun.Config, error) {
@@ -59,6 +60,7 @@ func (f *TunConfig) Build() (*tun.Config, error) {
 	// for xray
 	config.AutoDetectInterface = f.AutoDetectInterface
 	config.OverrideAndroidVpn = f.OverrideAndroidVPN
+	config.UnderNetworkExtension = f.UnderNetworkExtension
 	return &config, nil
 }
 
