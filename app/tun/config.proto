@@ -30,4 +30,5 @@ message Config {
   // for xray
   bool auto_detect_interface = 100;
   bool override_android_vpn = 101;
+  bool under_network_extension = 102;
 }

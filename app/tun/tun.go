@@ -69,7 +69,8 @@ func New(ctx context.Context, config *Config) (*Tun, error) {
 		return nil, err
 	}
 	defaultInterfaceMonitor, err := tun.NewDefaultInterfaceMonitor(networkUpdateMonitor, tun.DefaultInterfaceMonitorOptions{
-		OverrideAndroidVPN: config.OverrideAndroidVpn,
+		OverrideAndroidVPN:    config.OverrideAndroidVpn,
+		UnderNetworkExtension: config.UnderNetworkExtension,
 	})
 	if err != nil {
 		return nil, err
