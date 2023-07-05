@@ -186,6 +186,7 @@ func (t *Tun) Start() error {
 		UDPTimeout:             t.udpTimeout,
 		Handler:                t,
 		Logger:                 t.logger,
+		ForwarderBindInterface: true,
 	})
 	if err != nil {
 		return err
