@@ -187,6 +187,7 @@ func (t *Tun) Start() error {
 		Handler:                t,
 		Logger:                 t.logger,
 		ForwarderBindInterface: true,
+		InterfaceFinder:        t.interfaceFinder,
 	})
 	if err != nil {
 		return err
